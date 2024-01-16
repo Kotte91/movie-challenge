@@ -41,7 +41,7 @@ const MovieList = () => {
       <h2>Lista de Películas</h2>
       <ul>
         {movies.map((movie) => (
-          <li key={movie.id}> <img src={movie.backdrop_path} alt='hola' /> {movie.title}</li>
+          <li key={movie.id}><img src={"https://image.tmdb.org/t/p/w500" + movie.backdrop_path} /> {movie.title} {movie.release_date}</li>
         ))}
       </ul>
     </div>
