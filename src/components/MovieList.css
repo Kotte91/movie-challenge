@@ -1,0 +1,25 @@
+div {
+    display: flex;
+}
+
+ul {
+    list-style: none;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin: 2px;
+}
+
+.cards {
+    display: inline-block;
+    width: 250px;
+    border: 2px solid whitesmoke;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 20px;
+    text-align: center;
+}
+
+.picture {
+    width: 250px;
+    height: 250px;
+}

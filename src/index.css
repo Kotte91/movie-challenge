@@ -1,39 +1,7 @@
-body{
-  background-color: black;
-  color: whitesmoke;
-}
-/* Estilos generales para el contenedor */
-div {
-  max-width: 800px; /* Ajusta el ancho máximo según tus preferencias */
-  margin: 0 auto;  /* Centra el contenedor en la página */
-  padding: 20px;    /* Añade espacio interno alrededor del contenido */
-}
+/* @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap'); */
 
-/* Estilos para el título */
-h2 {
-  color:whitesmoke;     /* Color del texto */
-  font-size: 24px;  /* Tamaño de fuente */
-}
-
-/* Estilos para la lista */
-ul {
-  list-style: none; /* Elimina los puntos de la lista */
-  padding: 0;       /* Elimina el espacio interno de la lista */
-}
-
-/* Estilos para cada ítem de la lista */
-li {
-  display: grid;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 20px; /* Añade espacio entre las filas */
-
-  /* Estilos para la imagen */
-  img {
-    width: 50px;       /* Ajusta el ancho de la imagen según tus preferencias */
-    margin-right: 10px; /* Añade espacio entre la imagen y el texto */
-    border-radius: 5px; /* Agrega bordes redondeados a la imagen si lo deseas */
-  }
-
+body {
+    background: black;
+    font-family: 'Monoton', sans-serif; 
+    color: whitesmoke;
 }
