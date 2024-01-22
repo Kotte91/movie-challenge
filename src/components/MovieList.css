@@ -1,4 +1,4 @@
-div {
+.Cards-pagination {
     display: flex;
 }
 
@@ -7,9 +7,12 @@ ul {
     flex-flow: row wrap;
     justify-content: space-between;
     margin: 2px;
+    padding: 0px;
+    min-height: 500px;
 }
 
 .cards {
+    background: red;
     display: inline-block;
     width: 250px;
     border: 2px solid whitesmoke;
@@ -22,4 +25,32 @@ ul {
 .picture {
     width: 250px;
     height: 250px;
+}
+
+h3 {
+    text-align: center;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+}
+
+.next,
+.pre,
+.numberP {
+    color: #fff;
+    font-family: 'Monoton', sans-serif;
+    font-size: larger;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.next:hover,
+.pre:hover {
+    background-color: #9F86C0;
 }

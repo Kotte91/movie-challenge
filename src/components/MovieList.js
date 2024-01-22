@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import './MovieList.css';
 import axios from 'axios';
 
+
 const MovieList = () => {
   const [movies, setMovies] = useState([]);
+  const [page, setPage] = useState(1)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,54 +32,32 @@ const MovieList = () => {
         console.log(response.data.results);
       } catch (error) {
         console.error('Error al obtener la lista de películas:', error);
-      }   
-    };
-
-    fetchData();
-  }, []);
-
-  
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const moviesData = await getMovies(page,selectedGenre);
-        setMovies(moviesData.results);
-        console.log(moviesData);
-
-      } catch (error) {
-        // Manejar errores
-        console.error('Error fetching movies:', error);
       }
     };
 
     fetchData();
-  }, [page,selectedGenre]);
-
- function nextPage(){
-  setPage(page + 1)
- }
- function previosPage(){
-  setPage(page - 1)
- }
-
+  }, [page]);
 
   return (
-    <div>
+    <div className='Cards-pagination'>
       <ul>
         {movies.map((movie) => (
           <li key={movie.id} className='cards'>
-          <img src={"https://image.tmdb.org/t/p/w500" + movie.backdrop_path} alt={movie.title} className='picture'/> 
-          <h3 className='titleMovie'>{movie.title}</h3> 
-          <p>{movie.release_date}</p>
-        </li>
+            <img src={"https://image.tmdb.org/t/p/w500" + movie.backdrop_path} alt={movie.title} className='picture' />
+            <h3 className='titleMovie'>{movie.title}</h3>
+            <p>{movie.release_date}</p>
+          </li>
         ))}
       </ul>
-      <div className='pagination'>
-      <button onClick={previosPage}  className='pre'disabled={page === 1}> Back</button>
-      <p className='numberP'> {page}</p>
-      <button onClick={nextPage}  className='next'>Next</button>
+      <div className='Pagination'>
+        <button onClick={() => setPage(page - 1)} className='pre' disabled={page === 1}>
+          Back
+        </button>
+        <p className='numberP'> {page}</p>
+        <button onClick={() => setPage(page + 1)} className='next'>
+          Next
+        </button>
       </div>
-      
     </div>
 
   );
