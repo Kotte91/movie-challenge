@@ -17,7 +17,7 @@ const MovieList = () => {
             include_adult: 'false',
             include_video: 'false',
             language: 'en-US',
-            page: '1',
+            page,
             sort_by: 'popularity.desc',
           },
           headers: {
@@ -43,7 +43,7 @@ const MovieList = () => {
       <ul>
         {movies.map((movie) => (
           <li key={movie.id} className='cards'>
-            <img src={"https://image.tmdb.org/t/p/w500" + movie.backdrop_path} alt={movie.title} className='picture' />
+            <img src={"https://image.tmdb.org/t/p/w500" + movie.poster_path} alt={movie.title} className='picture' />
             <h3 className='titleMovie'>{movie.title}</h3>
             <p>{movie.release_date}</p>
           </li>
